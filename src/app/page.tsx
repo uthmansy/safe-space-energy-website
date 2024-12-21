@@ -21,12 +21,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="">
-      <Header />
+    <div className="w-full h-screen bg-black text-white flex items-center justify-center">
+      <h1 className="text-3xl">Site Under Construction</h1>
+      {/* <Header />
       <AboutUs />
       <Services />
       <Contact />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
