@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Sifa World Nigeria LTD",
+  title: "Safe Space Energy Nigeria LTD",
   description: "",
 };
 
