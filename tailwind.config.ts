@@ -11,13 +11,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "#808080",
-        secondary: "#caadab",
-        dark: "#2c2c2c",
+        primary: "#FBC713",
+        secondary: "#599DAD",
+        dark: "#143139",
         accent: "#c3adc8",
       },
       fontFamily: {
-        heading: '"Noto Serif Display", serif',
+        heading: '"Montserrat", serif',
       },
       fontSize: {
         base: "calc(14px + 0.2vw)", // Custom base font size

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { ReactNode, useLayoutEffect, useRef } from "react";
 import Container from "../Container";
 import {
   HERO_1,
@@ -10,38 +10,39 @@ import {
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TfiSettings } from "react-icons/tfi";
 
 interface Service {
   title: string;
-  icon: string;
+  icon: ReactNode;
   description: string;
 }
 
 function Services() {
   const services: Service[] = [
     {
-      title: "General Merchandising",
+      title: "CNG Conversion",
       description: `
-We provide a wide range of quality products sourced from trusted suppliers, meeting diverse business needs.`,
-      icon: SERVICES_ICON_1.src,
+Switching to CNG has never been easier! Our expert team specializes in converting vehicles from petrol (PMS) to CNG. Enjoy the benefits of reduced fuel costs, lower emissions, and enhanced efficiency.`,
+      icon: <TfiSettings />,
     },
     {
-      title: "Trading Solutions",
+      title: "CNG Conversion Kits",
       description: `
-Offering innovative trading services and connecting businesses to global markets for growth and profit.`,
-      icon: SERVICES_ICON_2.src,
+We offer top-quality conversion kits tailored to fit a wide range of vehicles. Our kits are designed to ensure durability, safety, and optimal performance. Choose Safe Space Energy for reliable, state-of-the-art technology.`,
+      icon: <TfiSettings />,
     },
     {
-      title: "Real Estate Development",
+      title: "Consultancy",
       description: `
-We specialize in residential and commercial properties, providing tailored solutions for every investment.`,
-      icon: SERVICES_ICON_3.src,
+Navigating the energy transition? Our consultancy team provides expert advice on integrating CNG into your operations. Whether you are a fleet owner, business operator, or individual, we offer customized solutions to maximize your energy efficiency and savings.`,
+      icon: <TfiSettings />,
     },
     {
-      title: "Business Consultancy",
+      title: "CNG Filling Stations",
       description: `
-Expert advice and strategic solutions to help you optimize operations and expand your business.`,
-      icon: SERVICES_ICON_4.src,
+Fuel your journey with ease at our strategically located CNG filling stations. Our stations are equipped with advanced technology for quick, safe, and seamless refueling experiences. Locate a Safe Space Energy filling station near you today!`,
+      icon: <TfiSettings />,
     },
   ];
 
@@ -86,14 +87,12 @@ Expert advice and strategic solutions to help you optimize operations and expand
               Our services
             </h2>
             <p className="opacity-70">
-              At Sifa World, we offer a range of comprehensive services tailored
-              to meet your business and investment needs. From general trading
-              and merchandise supply to real estate development and consultancy,
-              we deliver solutions that drive growth, maximize profitability,
-              and create lasting value. Whether you're looking to expand your
-              business, invest in properties, or explore new trading
-              opportunities, our expert team is here to guide you every step of
-              the way.
+              At Safe Space Energy, we offer a comprehensive range of services
+              designed to meet your energy needs effectively. From cutting-edge
+              technology to expert consultancy, we ensure that every solution is
+              tailored to deliver value, efficiency, and sustainability. Whether
+              you're transitioning to CNG, seeking quality equipment, or looking
+              for a reliable fuel supply, we've got you covered.
             </p>
           </div>
           <div
@@ -106,21 +105,11 @@ Expert advice and strategic solutions to help you optimize operations and expand
                 className="service flex flex-col space-y-8 shadow-md p-14 border bg-white justify-between"
               >
                 <div className="flex flex-col space-y-3">
-                  <img
-                    src={service.icon}
-                    alt=""
-                    className="w-14 h-14 object-cover"
-                  />
+                  <div className="text-5xl text-primary">{service.icon}</div>
                   <h3 className="uppercase font-bold">{service.title}</h3>
                   <span className="w-14 h-[2px] opacity-70 bg-primary"></span>
                 </div>
                 <p>{service.description}</p>
-                <Link
-                  href={"/about"}
-                  className="w-fit px-6 py-3 text-sm border border-primary uppercase"
-                >
-                  Read More
-                </Link>
               </div>
             ))}
           </div>

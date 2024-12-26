@@ -125,7 +125,7 @@ function Header() {
   };
 
   return (
-    <header className="relative h-[75vh] md:h-screen w-full overflow-hidden border-b">
+    <header className="relative h-[75vh] md:h-screen w-full overflow-hidden border-b text-white bg-gray-700">
       {images.map((image, index) => (
         <img
           data-scroll
@@ -136,21 +136,64 @@ function Header() {
           }}
           src={image}
           alt={`Slide ${index + 1}`}
-          className="absolute top-0 bottom-0 left-0 right-0 w-full h-full"
+          className="absolute top-0 bottom-0 left-0 right-0 w-full h-full object-cover"
           style={{
-            filter: "brightness(40%)",
             opacity: index === currentSlide ? 1 : 0,
           }}
         />
       ))}
-      <div className="h-full w-full flex flex-col">
-        <TopNav />
+      <div className="h-full w-full flex relative">
+        <div className="hidden bg-primary w-24 text-dark md:flex items-end py-20 justify-center">
+          <span>0{currentSlide + 1} / 03</span>
+        </div>
+        <div className="flex-1 bg-dark bg-opacity-90 flex flex-col">
+          <div>
+            <TopNav />
+          </div>
+          <div className="relative flex-1 flex items-center">
+            <Hero
+              titlesRef={titlesRef}
+              currentSlide={currentSlide}
+              nextSlide={nextSlide}
+              prevSlide={prevSlide}
+            />
+          </div>
+        </div>
+        <div className="hidden lg:flex w-full max-w-sm bg-dark bg-opacity-50 md:flex md:flex-col">
+          <div>
+            <Link
+              href={"/contact"}
+              className="w-full h-32 bg-primary text-dark flex items-center justify-center uppercase"
+            >
+              Contact Us ➝
+            </Link>
+          </div>
+          <div className="px-5 md:px-20 py-20 flex-1 flex items-end justify-center">
+            <div className="flex space-x-3">
+              <button
+                onClick={prevSlide}
+                aria-label="Previous Slide"
+                className="bg-primary text-dark h-12 w-12 border-opacity-30 flex items-center justify-center"
+              >
+                ←
+              </button>
+              <button
+                onClick={nextSlide}
+                aria-label="Next Slide"
+                className="bg-primary text-dark h-12 w-12 border-opacity-30 flex items-center justify-center"
+              >
+                ➝
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* <TopNav />
         <Hero
           titlesRef={titlesRef}
           currentSlide={currentSlide}
           nextSlide={nextSlide}
           prevSlide={prevSlide}
-        />
+        /> */}
       </div>
     </header>
   );

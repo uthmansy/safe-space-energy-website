@@ -1,4 +1,5 @@
 import LOGO from "../../public/images/logo.png";
+import LOGO_HEADER from "../../public/images/logo-header.png";
 import LOGO_WHITE from "../../public/images/logo-white.png";
 import HERO_1 from "../../public/images/hero/1.jpg";
 import HERO_2 from "../../public/images/hero/2.jpg";
@@ -21,6 +22,7 @@ import PRODUCT_3 from "../../public/images/products/15-15-15.jpg";
 
 export {
   LOGO,
+  LOGO_HEADER,
   LOGO_WHITE,
   HERO_1,
   HERO_2,
